@@ -1,6 +1,7 @@
 # Spring Cloud Gateway with OAuth2
 
 - Token Relay pattern supported by OAuth 2.0
+  - [Token Relay](https://cloud.spring.io/spring-cloud-static/spring-cloud-security/2.1.3.RELEASE/single/spring-cloud-security.html#_token_relay)
 
 ## Description
 
