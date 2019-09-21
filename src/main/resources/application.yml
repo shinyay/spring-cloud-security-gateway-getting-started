@@ -8,3 +8,4 @@ spring:
           gateway:
             provider: uaa
             client-id: gateway
+            client-secret: secret
