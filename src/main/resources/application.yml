@@ -9,3 +9,4 @@ spring:
             provider: uaa
             client-id: gateway
             client-secret: secret
+            client-authentication-method: basic
