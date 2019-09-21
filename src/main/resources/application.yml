@@ -7,4 +7,4 @@ spring:
         registration:
           gateway:
             provider: uaa
-            
+            client-id: gateway
