@@ -15,6 +15,12 @@
 ## Requirement
 
 ## Usage
+### Application Configuration
+- `application.yml`
+
+|Definition|Description|
+|----------|-----------|
+|registrationId|The ID that uniquely identifies the ClientRegistration<br>ex: gateway|
 
 ## Installation
 
