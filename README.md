@@ -27,6 +27,9 @@
 |authorization-grant-type|The OAuth 2.0 Authorization Framework defines four Authorization Grant types<br>**[UAA Authorization Grant Types](https://docs.cloudfoundry.org/uaa/uaa-concepts.html##auth-grant-types)**<br>`authorization_code`<br>`password`<br>`implicit`<br>`client_credentials`|
 |redirect-uri-template||
 
+#### Cloud Foundry UAA
+- [Client Grant Type for UAA](https://docs.cloudfoundry.org/uaa/uaa-concepts.html##select-type)
+
 ## Installation
 
 ## Licence
