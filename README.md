@@ -21,11 +21,11 @@
 |Definition|Description|
 |----------|-----------|
 |registrationId|The ID that uniquely identifies the ClientRegistration<br>ex: gateway|
-|client-id|The client identifier|
-|client-secret|The client secret|
+|client-id|The client identifier<br>UAAに登録したClient ID|
+|client-secret|The client secret<br>UAAから取得したSecret|
 |client-authentication-method|The method used to authenticate the Client with the Provider<br>`basic` / `post`|
 |authorization-grant-type|The OAuth 2.0 Authorization Framework defines four Authorization Grant types<br>**[UAA Authorization Grant Types](https://docs.cloudfoundry.org/uaa/uaa-concepts.html##auth-grant-types)**<br>`authorization_code`<br>`password`<br>`implicit`<br>`client_credentials`|
-|redirect-uri-template||
+|redirect-uri-template|The client’s registered redirect URI that the Authorization Server redirects the end-user’s user-agent to after the end-user has authenticated and authorized access to the client<br>ログイン後に認証サーバー(UAA)からリダイレクトするURL<br>DEFAULT: `{baseUrl}/login/oauth2/code/{registrationId}`|
 
 #### Cloud Foundry UAA
 - [Client Grant Type for UAA](https://docs.cloudfoundry.org/uaa/uaa-concepts.html##select-type)
