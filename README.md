@@ -21,6 +21,11 @@
 |Definition|Description|
 |----------|-----------|
 |registrationId|The ID that uniquely identifies the ClientRegistration<br>ex: gateway|
+|client-id|The client identifier|
+|client-secret|The client secret|
+|client-authentication-method|The method used to authenticate the Client with the Provider<br>`basic` / `post`|
+|authorization-grant-type|The OAuth 2.0 Authorization Framework defines four Authorization Grant types<br>**[UAA Authorization Grant Types](https://docs.cloudfoundry.org/uaa/uaa-concepts.html##auth-grant-types)**<br>`authorization_code`<br>`password`<br>`implicit`<br>`client_credentials`|
+|redirect-uri-template||
 
 ## Installation
 
