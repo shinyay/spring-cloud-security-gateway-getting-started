@@ -31,6 +31,9 @@ class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatew
 
 	@GetMapping("/resource")
 	fun resource(@AuthenticationPrincipal jwt: Jwt) {
+		logger.trace("***** JWT HEADERS: ${jwt.headers}")
+		logger.trace("***** JWT CLAIMS: ${jwt.claims}")
+		logger.trace("***** JWT TOKEN: ${jwt.tokenValue}")
 	}
 }
 
