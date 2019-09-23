@@ -1,5 +1,7 @@
 package io.pivotal.shinyay
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.cloud.gateway.route.RouteLocator
@@ -9,6 +11,8 @@ import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
 class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatewayFilterFactory) {
+
+	val logger: Logger = LoggerFactory.getLogger(this.javaClass.name)
 
 	@Bean
 	fun routeLocator(builder: RouteLocatorBuilder): RouteLocator {
