@@ -15,4 +15,5 @@ spring:
             scope: openid,profile,email,resource.read
         provider:
           uaa:
-            
+            authorization-uri: http://localhost:8090/uaa/oauth/authorize
+
