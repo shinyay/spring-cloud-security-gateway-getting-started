@@ -69,6 +69,10 @@ Note: no key given to validate token signature
   aud: scim clients uaa admin
 ```
 
+### Gateway Routing
+#### Client Token Relay in Spring Cloud Gateway
+- [Token Relay](https://cloud.spring.io/spring-cloud-static/Greenwich.RC2/single/spring-cloud.html#_client_token_relay_in_spring_cloud_gateway)
+  - [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway) embedded reverse proxy then you can ask it to forward OAuth2 access tokens downstream to the services it is proxying
 ## Installation
 
 ## Licence
