@@ -5,10 +5,12 @@ import org.springframework.boot.runApplication
 import org.springframework.cloud.gateway.route.RouteLocator
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder
 import org.springframework.cloud.security.oauth2.gateway.TokenRelayGatewayFilterFactory
+import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
 class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatewayFilterFactory) {
 
+	@Bean
 	fun routeLocator(builder: RouteLocatorBuilder): RouteLocator {
 		return builder.routes()
 				.route("resource") { r ->
