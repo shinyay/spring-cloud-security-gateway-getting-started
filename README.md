@@ -35,7 +35,7 @@
 |authorization-uri|The Authorization Endpoint URI for the Authorization Server|
 |token-uri|The Token Endpoint URI for the Authorization Server|
 |jwkSetUri|The URI used to retrieve the JSON Web Key (JWK) Set from the Authorization Server<br>JWK contains the cryptographic key(s) used to verify the JSON Web Signature (JWS) of the ID Token and optionally the UserInfo Response|
-|||
+|authenticationMethod|The authentication method used when sending the access token to the UserInfo Endpoint|
 |||
 
 #### Cloud Foundry UAA
