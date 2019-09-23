@@ -8,7 +8,12 @@ import org.springframework.cloud.gateway.route.RouteLocator
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder
 import org.springframework.cloud.security.oauth2.gateway.TokenRelayGatewayFilterFactory
 import org.springframework.context.annotation.Bean
+import org.springframework.security.core.annotation.AuthenticationPrincipal
+import org.springframework.security.oauth2.jwt.Jwt
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
 
+@RestController
 @SpringBootApplication
 class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatewayFilterFactory) {
 
@@ -22,6 +27,10 @@ class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatew
 							.filters { f -> f.filters(filterFactory.apply()) }
 							.uri("http://resource:9000")}
 				.build()
+	}
+
+	@GetMapping("/resource")
+	fun resource(@AuthenticationPrincipal jwt: Jwt) {
 	}
 }
 
