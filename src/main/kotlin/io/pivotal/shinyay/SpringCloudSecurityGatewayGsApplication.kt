@@ -9,11 +9,15 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder
 import org.springframework.cloud.security.oauth2.gateway.TokenRelayGatewayFilterFactory
 import org.springframework.context.annotation.Bean
 import org.springframework.security.core.annotation.AuthenticationPrincipal
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient
+import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient
+import org.springframework.security.oauth2.core.user.OAuth2User
 import org.springframework.security.oauth2.jwt.Jwt
+import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RestController
 
-@RestController
+@Controller
 @SpringBootApplication
 class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatewayFilterFactory) {
 
@@ -29,13 +33,18 @@ class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatew
 				.build()
 	}
 
-	@GetMapping("/resource")
-	fun resource(@AuthenticationPrincipal jwt: Jwt): String {
-		logger.trace("***** JWT HEADERS: ${jwt.headers}")
-		logger.trace("***** JWT CLAIMS: ${jwt.claims}")
-		logger.trace("***** JWT TOKEN: ${jwt.tokenValue}")
+	@GetMapping("/")
+	fun index(model: Model,
+			  @RegisteredOAuth2AuthorizedClient authorizedClient: OAuth2AuthorizedClient,
+			  @AuthenticationPrincipal oAuth2User: OAuth2User): String {
+		logger.trace("***** USERNAME: ${oAuth2User.name}")
+		logger.trace("***** CLIENT_NAME: ${authorizedClient.clientRegistration.clientName}")
+		logger.trace("***** USER_ATTRIBUTES: ${oAuth2User.attributes}")
 
-		return "Resource accessed by: ${jwt.claims["user_name"]} (with subjectId: ${jwt.subject})"
+		model.addAttribute("userName", oAuth2User.name)
+		model.addAttribute("clientName", authorizedClient.clientRegistration.clientName)
+		model.addAttribute("userAttributes", oAuth2User.attributes)
+		return "index"
 	}
 }
 
