@@ -16,4 +16,5 @@ spring:
         provider:
           uaa:
             authorization-uri: http://localhost:8090/uaa/oauth/authorize
+            token-uri: http://uaa:8090/uaa/oauth/token
 
