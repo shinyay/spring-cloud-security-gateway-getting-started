@@ -101,6 +101,9 @@ spring:
             - TokenRelay=
 ```
 
+### Thymeleaf - Spring Security integration modules
+- [thymeleaf/thymeleaf-extras-springsecurity](https://github.com/thymeleaf/thymeleaf-extras-springsecurity)
+
 ## Installation
 
 ## Licence
