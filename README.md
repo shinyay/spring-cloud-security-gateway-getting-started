@@ -33,7 +33,7 @@
 |Definition|Description|
 |----------|-----------|
 |authorization-uri|The Authorization Endpoint URI for the Authorization Server|
-|||
+|token-uri|The Token Endpoint URI for the Authorization Server|
 |||
 |||
 |||
