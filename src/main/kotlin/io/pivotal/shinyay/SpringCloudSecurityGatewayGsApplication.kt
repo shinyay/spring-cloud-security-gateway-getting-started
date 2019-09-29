@@ -12,7 +12,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient
 import org.springframework.security.oauth2.core.user.OAuth2User
-import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -28,7 +27,8 @@ class SpringCloudSecurityGatewayGsApplication(val filterFactory: TokenRelayGatew
 		return builder.routes()
 				.route("resource") { r ->
 					r.path("/resource")
-							.filters { f -> f.filters(filterFactory.apply()) }
+							.filters { f -> f.filters(filterFactory.apply())
+									.removeRequestHeader("Cookie")}
 							.uri("http://resource:9000")}
 				.build()
 	}
