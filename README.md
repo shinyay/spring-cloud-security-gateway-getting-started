@@ -7,6 +7,8 @@
 
 - [DockerHub: shinyay/spring-cloud-security-gateway-gs](https://cloud.docker.com/u/shinyay/repository/docker/shinyay/spring-cloud-security-gateway-gs)
 
+- [Related App:spring-cloud-security-service-gs](https://github.com/shinyay/spring-cloud-security-service-getting-started)
+
 ## Demo
 
 ## Features
